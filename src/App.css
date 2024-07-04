@@ -1,0 +1,7 @@
+body, html, #root, #map {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+}
