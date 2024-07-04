@@ -24,7 +24,11 @@ const cities = ['北京', '天津', '上海', '重庆', '哈尔滨', '长春', '
 // const cities = ['北京', '天津', '上海', '重庆', '哈尔滨', '长春', '沈阳'];
 
 async function fetchCityData(city: string){
-    const url = `/locationApi/?address=${encodeURIComponent(city)}&output=json&ak=${LOCATION_KEY}`;
+    let specialCity = '';
+    if(city === '西安'){
+      specialCity = '陕西省西安市'
+    }
+    const url = `/locationApi/?address=${encodeURIComponent(specialCity || city)}&output=json&ak=${LOCATION_KEY}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
